@@ -1,0 +1,14 @@
+// // I use sass main.scss ../css/main.css to compile the SASS files into css.
+
+@import 'base/reset.scss';
+@import 'base/typography.scss';
+@import 'base/global.scss';
+@import 'base/media.scss';
+
+@import 'shared/header.scss';
+@import 'components/buttons/buttons.scss';
+
+@import 'components/list/list-item.scss';
+@import 'components/list/list.scss';
+
+@import 'components/authentication/auth.scss';

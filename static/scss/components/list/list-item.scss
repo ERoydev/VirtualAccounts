@@ -1,0 +1,53 @@
+@import '../../base/media.scss';
+
+.list-item {
+    @extend .window;
+    width: 260px;
+}
+
+.list-item-media {
+    overflow: hidden;
+    height: 9em;
+    border-radius: 25px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.list-item-media img {
+    width: 18em;
+}
+
+.list-item p {
+    color: $text-color;
+}
+
+.list-item .title {
+    font-weight: bold;
+    color: #e6e5e5;
+}
+
+.list-item .row {
+    display: flex;
+    justify-content: space-between;
+    padding: 0.7em 0.2em;
+}
+
+.list-item .rating {
+    display: flex;
+    gap: 0.2em;
+    align-items: center;
+}
+
+.list-item .rating svg {
+    width: 20px;
+    height: 20px;
+    fill: rgb(206, 151, 48);
+}
+
+
+.list-item col {
+    display: flex;
+    flex-direction: column;
+    gap: 1em;
+}

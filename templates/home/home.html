@@ -1,0 +1,23 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block page_content %}
+<div class="window-container">
+    <!-- HERO SECTION -->
+    <div>
+        <div class="media">
+            <img src="{% static 'images/gaming_hero.svg' %}"/>
+            <div class="media-text">
+                <h5>Welcome to VirtualAccs</h5>
+                <h1 class="description"><span class="media-colored-text">BROWSE</span> OUR POPULAR ACCOUNTS FOR SALE</h1>
+                <div>
+                    <a href="#" class="primary-button">Browse Now</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- END HERO SECTION -->
+
+    {% include '../components/games/most_popular_games.html' %}
+</div>
+
+{% endblock %}
