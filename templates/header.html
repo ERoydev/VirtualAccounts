@@ -5,7 +5,7 @@
                     <nav class="main-nav">
                         <div class="nav-logo-search">
                                 <!-- ***** Logo Start ***** -->
-                                <a href="#" class="logo">
+                                <a href="{% url 'home' %}" class="logo">
                                     <p>VirtualAccs</p>
                                 </a>
                                 <!-- ***** Logo End ***** -->
@@ -25,12 +25,12 @@
                         <!-- ***** Menu Start ***** -->
                          <div>
                             <ul class="nav">
-                                <li><a href="#" class="active btn">Home</a></li>
+                                <li><a href="{% url 'home' %}" class="active btn">Home</a></li>
                                 <li><a href="#" class="btn">Browse</a></li>
                                 <li><a href="#" class="btn">Details</a></li>
                                 <li><a href="#" class="btn">Categories</a></li>
                                 <!--<li class="secondary-button" class="btn"><a href="#">Profile <img src="assets/images/profile-header.jpg" alt=""></a></li> -->
-                                <li class="secondary-button" class="btn"><a href="#">Sing up</a></li>
+                                <li><a href="{% url 'register' %}" class="secondary-button" class="btn">Sing up</a></li>
                             </ul>
 
                             <a href="#" class='menu-trigger'>
