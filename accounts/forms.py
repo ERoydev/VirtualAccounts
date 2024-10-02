@@ -2,6 +2,17 @@ from django import forms
 from .models import AppUser
 
 
+class LoginForm(forms.Form):
+
+    email = forms.CharField(
+        max_length=100,
+        widget=forms.TextInput(attrs={'class': 'form-control'})
+    )
+    password = forms.CharField(
+        widget=forms.PasswordInput(attrs={'class': 'form-control'}),
+    )
+
+
 class RegisterForm(forms.ModelForm):
     password = forms.CharField(
         widget=forms.PasswordInput(attrs={'class': 'form-control'}),
@@ -27,6 +38,8 @@ class RegisterForm(forms.ModelForm):
         password = cleaned_data.get("password")
         confirm_password = cleaned_data.get("confirm_password")
 
+
+        # I check here if the passwords match
         if password and confirm_password and password != confirm_password:
             self.add_error('confirm_password', "Passwords do not match")
 

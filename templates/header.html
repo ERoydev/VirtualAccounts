@@ -28,9 +28,14 @@
                                 <li><a href="{% url 'home' %}" class="active btn">Home</a></li>
                                 <li><a href="#" class="btn">Browse</a></li>
                                 <li><a href="#" class="btn">Details</a></li>
-                                <!--<li class="secondary-button" class="btn"><a href="#">Profile <img src="assets/images/profile-header.jpg" alt=""></a></li> -->
-                                <li><a href="{% url 'register' %}" class="secondary-button" class="btn">Sing up</a></li>
-                                <li><a href="{% url 'login' %}" class="secondary-button" class="btn">Login</a></li>
+                                
+                                {% if user.is_authenticated %}
+                                    <li class="secondary-button" class="btn"><a href="#">Profile</a></li>
+                                     <li class="secondary-button" class="btn"><a href="{% url 'logout' %}">Logout</a></li>
+                                {% else %}
+                                    <li><a href="{% url 'register' %}" class="secondary-button" class="btn">Sing up</a></li>
+                                    <li><a href="{% url 'login' %}" class="secondary-button" class="btn">Login</a></li>
+                                {% endif %}
                                 
                             </ul>
 
