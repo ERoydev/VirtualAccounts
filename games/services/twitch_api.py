@@ -1,9 +1,11 @@
 import requests
+from django.core import cache
 import os
 
 # Ideally, load sensitive values from environment variables
 CLIENT_ID = 'h99ayv98oyhqed1bknma67wpmnftki'
 CLIENT_SECRET = 'w9pe6iiw08cpx9yl005rd3fiumcz0l'
+
 
 def get_twitch_access_token():
     # Method used to get access_token to perform request to the api
@@ -56,6 +58,8 @@ def get_popular_multiplayer_games(data_limit):
     response = requests.post(url, headers=headers, data=data)
 
     if response.status_code == 200:
-        return response.json()
+        games = response.json()
+
+        return games
     else:
         raise Exception(f"Failed to fetch games: {response.status_code} - {response.text}")

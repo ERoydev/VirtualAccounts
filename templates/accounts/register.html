@@ -3,7 +3,7 @@
 <html>
 	<head>
 		<meta charset="utf-8">
-		<title>RegistrationForm_v2 by Colorlib</title>
+		<title>VirtualAccs</title>
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
         
 		<!-- STYLE CSS -->
@@ -25,37 +25,57 @@
 
             <div class="wrapper" style="background-image: url('{% static 'images/auth/bg-registration-form-2.jpg' %}');">
                 <div class="inner">
-                    <form action="">
+                    <form action="{% url 'register' %}" method="POST">
+                        {% csrf_token %}
                         <h3>Registration Form</h3>
+
+                        <div class="error-messages">
+                            {% for field, errors in form.errors.items %}
+                                {% for error in errors %}
+                                    <p class="error-item">{{ error }}</p>
+                                {% endfor %}
+                            {% endfor %}
+                        </div>
+                        
                         <div class="form-group">
                             <div class="form-wrapper">
                                 <label for="">First Name</label>
-                                <input type="text" class="form-control">
+                                {{ form.first_name }}
                             </div>
                             <div class="form-wrapper">
                                 <label for="">Last Name</label>
-                                <input type="text" class="form-control">
+                                {{ form.last_name }}
+{#                                <input type="text" class="form-control">#}
                             </div>
                         </div>
+                        
                         <div class="form-wrapper">
                             <label for="">Email</label>
-                            <input type="text" class="form-control">
+                            {{ form.email }}
+{#                            <input type="text" class="form-control">#}
                         </div>
+                        
                         <div class="form-wrapper">
                             <label for="">Password</label>
-                            <input type="password" class="form-control">
+                            {{ form.password }}
+{#                            <input type="password" class="form-control">#}
                         </div>
+                        
                         <div class="form-wrapper">
                             <label for="">Confirm Password</label>
-                            <input type="password" class="form-control">
+                            {{ form.confirm_password }}
+{#                            <input type="password" class="form-control">#}
                         </div>
+                        
                         <div class="checkbox">
                             <label>
-                                <input type="checkbox"> I caccept the Terms of Use & Privacy Policy.
+                                <input type="checkbox"> I accept the Terms of Use & Privacy Policy.
                                 <span class="checkmark"></span>
                             </label>
                         </div>
+
                         <button>Register Now</button>
+
                     </form>
                 </div>
             </div>

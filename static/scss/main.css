@@ -742,4 +742,13 @@ header .nav {
   height: 3em;
 }
 
+.error-item {
+  color: #b80909;
+  padding-bottom: 5px;
+}
+
+.error-messages {
+  padding-bottom: 15px;
+}
+
 /*# sourceMappingURL=main.css.map */
